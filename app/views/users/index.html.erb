@@ -4,7 +4,7 @@
     <div class='col-md-3'>
       <h2>User info</h2>
       <table class='table'>
-        <tr><img src="image.jpg" /></tr>
+        <tr><%= image_tag @user.get_profile_image(100,100) %></p></tr>
 	      <th>name</th>
 	      <th></th>
         </tr>
@@ -44,7 +44,7 @@
   </thead>
   <tbody>
       <tr>
-        <td><img src="image.jpg" /></td>
+        <td><%= image_tag @user.get_profile_image(100,100) %></p></td>
         <td></td>
         <td><a class="user_path" href="/users/show">Show</a></td>
       </tr>

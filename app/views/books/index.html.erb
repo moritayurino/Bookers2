@@ -5,16 +5,14 @@
     <div class='col-md-3'>
       <h2>User info</h2>
       <table class='table'>
-  <tr><img src="image.jpg" /></tr>
+  <tr><%= image_tag @user_image %></tr>
   <tr>
 	  <th>name</th>
-	  <% @books.each do |book| %>
-	  <th><%= book.user.name %></th>
+	  <th><%= @user_name %></th>
 	</tr>
 	<tr>
 	  <th>introduction</th>
-	  <th><%= book.user.introduction %></th>
-	  <% end %>
+	  <th><%= @user_introduction %></th>
   </tr>
 </table>
 　
@@ -51,14 +49,9 @@
   </thead>
   <tbody>
     <tr>
-      <% @books.each do |book| %>
-        <td><%= book.user.name %></td>
-        <td>
-          <%= book.title %></a></td>
-        <td></td>
-        
-        
-<% end %>
+        <td><%= image_tag book.user.get_profile_image(100,100) %></p></td>
+        <td><%= @book.title %></a></td>
+        <td><%= @book.body %></td>
          </tr>
   </tbody>
 </table>
