@@ -1,4 +1,8 @@
-
+<% if flash[:success].present? %>
+  <div class="alert alert-success">
+    <%= flash[:success] %>
+  </div>
+<% end %>
 <p id="notice"></p>
         <div class='container'>
   <div class='row'>

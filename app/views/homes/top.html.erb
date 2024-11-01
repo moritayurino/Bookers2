@@ -1,5 +1,8 @@
-<p id="notice"></p>
-<div class="container">
+<% if flash[:notice].present? %>
+  <div class="alert alert-success">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
   <div class="row">
     <div class='mx-auto col-11 col-sm-10 col-lg-8 col-xl-6'>
     <h1>Welcome to <i class="fa-solid fa-book"></i><strong>Bookers</strong> !!</h1>
