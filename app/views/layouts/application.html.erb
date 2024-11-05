@@ -13,38 +13,30 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <a class="navbar-brand" href="/"><span>Bookers</span></a>
+          <a class="navbar-brand" href="/">Bookers</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
-            <li>
-            <a class="nav-link text-light" href='/users/:id'>
-              <i class="fa-solid fa-home"></i> Home</a></li>
-            <li>
-            <a class="nav-link text-light" href="/users">
-              <i class="fa-solid fa-users"></i> Users</a></li>
-            <li>
-            <a class="nav-link text-light" href="/books">
-              <i class="fa-solid fa-book-open"></i> Books</a></li>
-            <li>
-              <a class="nav-link text-light" rel="nofollow" data-method="delete" href="/users/sign_out">
-              <i class="fa-solid fa-sign-out-alt"></i> Log out</a></li>
+            <li><%= link_to user_path(current_user.id), class: "nav-link text-light" do %>Home
+              <i class="fa-solid fa-home"></i><% end %></li>
+            <li><%= link_to users_path, class: "nav-link text-light" do %>Users
+              <i class="fa-solid fa-users"></i><% end %></li>
+            <li><%= link_to books_path, class: "nav-link text-light" do %>Books
+              <i class="fa-solid fa-book-open"></i><% end %></li>
+            <li><%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-light' do %>Log out
+              <i class="fa-solid fa-sign-out-alt"></i><% end %></li>
             <% else %>
-            <li>
-            <a class="nav-link text-light" href="/">
-              <i class="fa-solid fa-home"></i> Home</a></li>
-            <li>
-            <a class="nav-link text-light" href="/homes/about">
-              <i class="fa-solid fa-link"></i> About</a></li>
-            <li>
-            <a class="nav-link text-light" href="/users/sign_up">
-              <i class="fa-solid fa-user-plus"></i> Sign up</a></li>
-            <li>
-            <a class="nav-link text-light" href="/users/sign_in">
-              <i class="fa-solid fa-sign-in-alt"></i> Log in</a></li>
+            <li><%= link_to root_path, class: 'nav-link text-light' do %>Home
+              <i class="fa-solid fa-home"></i><% end %></li>
+            <li><%= link_to about_path, class: 'nav-link text-light' do %>About
+              <i class="fa-solid fa-link"></i><% end %></li>
+            <li><%= link_to new_user_registration_path, class: 'nav-link text-light' do %>Sign up
+            <i class="fa-solid fa-user-plus"></i><% end %></li>
+            <li><%= link_to new_user_session_path, class: 'nav-link text-light' do %>Log in
+              <i class="fa-solid fa-sign-in-alt"></i><% end %></li>
             <% end %>
             </ul>
           </div>

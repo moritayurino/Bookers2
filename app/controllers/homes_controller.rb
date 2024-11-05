@@ -12,7 +12,7 @@ class HomesController < ApplicationController
   
   def destroy
     log_out
-    flash[:notice] = "Signed out successfully."
+    flash.now[:notice] = "Signed out successfully."
     redirect_to root_url
   end
   
