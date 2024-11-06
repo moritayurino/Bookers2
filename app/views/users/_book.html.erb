@@ -23,11 +23,11 @@
 </table>
 
 <div class='row'>
-  <%= link_to edit_user_path(current_user.id), class:"btn btn-outline-secondary btn-block edit_user_path" do %>
+  <%= link_to edit_user_path(@user.id), class:"btn btn-outline-secondary btn-block edit_user_path" do %>
     <i class="fas fa-user-cog"></i>
     <% end %></div>
 <br>
-    <%= form_with model: book, method: :post do |f| %>
+    <%= form_with model: @book, method: :post do |f| %>
     <h2>New book</h2>
     <p>Title</p>
     <%= f.text_field :title %>
